@@ -7,11 +7,15 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0B3A622C57F09D93F121BAE7 /* Pods_iFindACar.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 876F91C2F9E312784D186104 /* Pods_iFindACar.framework */; };
 		16EE30441EA2CEE700133808 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16EE30431EA2CEE700133808 /* AppDelegate.swift */; };
 		16EE30461EA2CEE700133808 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16EE30451EA2CEE700133808 /* ViewController.swift */; };
 		16EE30491EA2CEE700133808 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 16EE30471EA2CEE700133808 /* Main.storyboard */; };
 		16EE304B1EA2CEE700133808 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 16EE304A1EA2CEE700133808 /* Assets.xcassets */; };
 		16EE304E1EA2CEE700133808 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 16EE304C1EA2CEE700133808 /* LaunchScreen.storyboard */; };
+		16EE30561EA2D11100133808 /* Vehicle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16EE30551EA2D11100133808 /* Vehicle.swift */; };
+		16EE30581EA5AFFA00133808 /* VehicleTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16EE30571EA5AFFA00133808 /* VehicleTableViewCell.swift */; };
+		16EE305A1EA5B33600133808 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16EE30591EA5B33600133808 /* DetailViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +26,12 @@
 		16EE304A1EA2CEE700133808 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		16EE304D1EA2CEE700133808 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		16EE304F1EA2CEE700133808 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		16EE30551EA2D11100133808 /* Vehicle.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Vehicle.swift; sourceTree = "<group>"; };
+		16EE30571EA5AFFA00133808 /* VehicleTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VehicleTableViewCell.swift; sourceTree = "<group>"; };
+		16EE30591EA5B33600133808 /* DetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
+		784A90C7B9F4AFDDB8D2F4EB /* Pods-iFindACar.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iFindACar.release.xcconfig"; path = "Pods/Target Support Files/Pods-iFindACar/Pods-iFindACar.release.xcconfig"; sourceTree = "<group>"; };
+		876F91C2F9E312784D186104 /* Pods_iFindACar.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_iFindACar.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		97E6FF642B61DDFCA66B724D /* Pods-iFindACar.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iFindACar.debug.xcconfig"; path = "Pods/Target Support Files/Pods-iFindACar/Pods-iFindACar.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -29,6 +39,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0B3A622C57F09D93F121BAE7 /* Pods_iFindACar.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -40,6 +51,8 @@
 			children = (
 				16EE30421EA2CEE600133808 /* iFindACar */,
 				16EE30411EA2CEE600133808 /* Products */,
+				80EFADE03123017D0A20C64D /* Pods */,
+				3049B368457CA917F9DC684C /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -56,12 +69,32 @@
 			children = (
 				16EE30431EA2CEE700133808 /* AppDelegate.swift */,
 				16EE30451EA2CEE700133808 /* ViewController.swift */,
+				16EE30591EA5B33600133808 /* DetailViewController.swift */,
+				16EE30571EA5AFFA00133808 /* VehicleTableViewCell.swift */,
+				16EE30551EA2D11100133808 /* Vehicle.swift */,
 				16EE30471EA2CEE700133808 /* Main.storyboard */,
 				16EE304A1EA2CEE700133808 /* Assets.xcassets */,
 				16EE304C1EA2CEE700133808 /* LaunchScreen.storyboard */,
 				16EE304F1EA2CEE700133808 /* Info.plist */,
 			);
 			path = iFindACar;
+			sourceTree = "<group>";
+		};
+		3049B368457CA917F9DC684C /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				876F91C2F9E312784D186104 /* Pods_iFindACar.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		80EFADE03123017D0A20C64D /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				97E6FF642B61DDFCA66B724D /* Pods-iFindACar.debug.xcconfig */,
+				784A90C7B9F4AFDDB8D2F4EB /* Pods-iFindACar.release.xcconfig */,
+			);
+			name = Pods;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -71,9 +104,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 16EE30521EA2CEE700133808 /* Build configuration list for PBXNativeTarget "iFindACar" */;
 			buildPhases = (
+				B615E3130443E2564B38D0C3 /* [CP] Check Pods Manifest.lock */,
 				16EE303C1EA2CEE600133808 /* Sources */,
 				16EE303D1EA2CEE600133808 /* Frameworks */,
 				16EE303E1EA2CEE600133808 /* Resources */,
+				438EA750200671D13ED4B47D /* [CP] Embed Pods Frameworks */,
+				396A3DD8B31D453576562DD8 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -132,11 +168,62 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		396A3DD8B31D453576562DD8 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-iFindACar/Pods-iFindACar-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		438EA750200671D13ED4B47D /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-iFindACar/Pods-iFindACar-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		B615E3130443E2564B38D0C3 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		16EE303C1EA2CEE600133808 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				16EE30581EA5AFFA00133808 /* VehicleTableViewCell.swift in Sources */,
+				16EE30561EA2D11100133808 /* Vehicle.swift in Sources */,
+				16EE305A1EA5B33600133808 /* DetailViewController.swift in Sources */,
 				16EE30461EA2CEE700133808 /* ViewController.swift in Sources */,
 				16EE30441EA2CEE700133808 /* AppDelegate.swift in Sources */,
 			);
@@ -259,6 +346,7 @@
 		};
 		16EE30531EA2CEE700133808 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 97E6FF642B61DDFCA66B724D /* Pods-iFindACar.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = T3F49YZ2FH;
@@ -272,6 +360,7 @@
 		};
 		16EE30541EA2CEE700133808 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 784A90C7B9F4AFDDB8D2F4EB /* Pods-iFindACar.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = T3F49YZ2FH;
@@ -302,6 +391,7 @@
 				16EE30541EA2CEE700133808 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
