@@ -42,15 +42,16 @@ class ViewController: UIViewController {
                         
                       //  self.modelArray.append(elem["text"].element!.text!)
                     }
+                    DispatchQueue.main.async {
+                        self.vehicleTableView.reloadData()
+                    }
+                    
                 } // makeArray loop
                 
             } // yearArray loop
-           sleep(1)
-           self.vehicleTableView.reloadData()
+//           sleep(1)
+//           self.vehicleTableView.reloadData()
 
-           DispatchQueue.main.async {
-            self.vehicleTableView.reloadData()
-            }
         }
     }
 
