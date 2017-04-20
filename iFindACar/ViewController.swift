@@ -20,7 +20,7 @@ class ViewController: UIViewController {
     let hostName4options = "http://www.fueleconomy.gov/ws/rest/vehicle/menu/options?year=2012&make=Honda&model=Fit"
     var vehicleArray = [Vehicle]()
     var modelArray = [String]()
-    var makeArray = ["Nissan","Ford", "Toyota", "Honda"]
+    var makeArray = ["Chevrolet", "Nissan","Ford", "Toyota", "Honda", "Kia", "Chrysler"]
     var yearArray = ["2017", "2016", "2015"]
     @IBOutlet var vehicleTableView      :UITableView!
     
@@ -51,7 +51,6 @@ class ViewController: UIViewController {
             } // yearArray loop
 //           sleep(1)
 //           self.vehicleTableView.reloadData()
-
         }
     }
 
