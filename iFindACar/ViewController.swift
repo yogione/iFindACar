@@ -77,7 +77,7 @@ class ViewController: UIViewController {
     //MARK: - Life Cycle Methods
     override func viewDidLoad() {
         super.viewDidLoad()
-        seedTestData()
+       // seedTestData()
         self.alamoFire()
        // self.vehicleTableView.reloadData()
     }
