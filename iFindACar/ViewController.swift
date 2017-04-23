@@ -14,14 +14,12 @@ import Alamofire
 
 class ViewController: UIViewController {
     
-   // let hostName4model = "http://www.fueleconomy.gov/ws/rest/vehicle/menu/model?year=2016&make=Toyota"
     var hostName4model :String!
     
-    let hostName4options = "http://www.fueleconomy.gov/ws/rest/vehicle/menu/options?year=2012&make=Honda&model=Fit"
     var vehicleArray = [Vehicle]()
-    var modelArray = [String]()
-    var makeArray = ["Chevrolet", "Nissan","Ford", "Toyota", "Honda", "Kia", "Chrysler"]
+    var makeArray = ["Chevrolet", "Nissan","Ford", "Toyota", "Honda", "Chrysler"]
     var yearArray = ["2017", "2016", "2015"]
+    
     @IBOutlet var vehicleTableView      :UITableView!
     
     func alamoFire(){
@@ -33,27 +31,23 @@ class ViewController: UIViewController {
                     let xmlResult = SWXMLHash.parse(response.data!)
                     for elem in xmlResult["menuItems"]["menuItem"].all {
                       //  print(elem["text"].element!.text!)
-                        guard let currModel = elem["text"].element!.text!  as? String
+                        guard let currModel = elem["text"].element!.text! as? String
                         else { continue }
                         
                        // print("year: \(year), make: \(make), model: \(currModel)")
                         let newVehicle = Vehicle(modelYear: year, make: make, model: currModel)
                         self.vehicleArray.append(newVehicle)
-                        
-                      //  self.modelArray.append(elem["text"].element!.text!)
                     }
+                  //  self.vehicleArray.sorted(by: { $0.make > $1.make })
                     DispatchQueue.main.async {
                         self.vehicleTableView.reloadData()
                     }
-                    
                 } // makeArray loop
-                
             } // yearArray loop
 //           sleep(1)
 //           self.vehicleTableView.reloadData()
         }
     }
-
     
     //Mark: - interactive methods
     
@@ -91,8 +85,6 @@ class ViewController: UIViewController {
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
     }
-
-
 }
 
 extension ViewController: UITableViewDelegate, UITableViewDataSource {
@@ -105,11 +97,9 @@ extension ViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath) as! VehicleTableViewCell
         let currentVehicle = vehicleArray[indexPath.row]
-        
         cell.modelYearLabel.text = currentVehicle.modelYear
         cell.makeLabel.text = currentVehicle.make
         cell.modelLabel.text = currentVehicle.model
-        
         return cell
     }
     

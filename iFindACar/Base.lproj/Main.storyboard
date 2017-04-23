@@ -131,8 +131,14 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="syx-W3-FU6">
-                                <rect key="frame" x="0.0" y="89" width="375" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <rect key="frame" x="0.0" y="89" width="375" height="17"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jWk-I1-OFO" userLabel="mpg label">
+                                <rect key="frame" x="0.0" y="114" width="359" height="17"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
@@ -140,11 +146,16 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="zEX-LZ-Vpu" firstAttribute="top" secondItem="9De-4d-JIb" secondAttribute="bottom" id="1Nl-je-g4G"/>
+                            <constraint firstAttribute="trailing" secondItem="jWk-I1-OFO" secondAttribute="trailing" constant="16" id="1eI-Yj-2q5"/>
                             <constraint firstItem="pFB-fn-RNW" firstAttribute="top" secondItem="9De-4d-JIb" secondAttribute="bottom" id="ESE-QJ-MXp"/>
+                            <constraint firstItem="jWk-I1-OFO" firstAttribute="leading" secondItem="Vo8-mB-GeL" secondAttribute="leading" id="NNF-qP-yph"/>
                             <constraint firstItem="syx-W3-FU6" firstAttribute="leading" secondItem="Vo8-mB-GeL" secondAttribute="leading" id="PBI-dd-02W"/>
                             <constraint firstItem="pFB-fn-RNW" firstAttribute="leading" secondItem="Vo8-mB-GeL" secondAttribute="leading" id="UVf-WB-eIt"/>
+                            <constraint firstItem="jWk-I1-OFO" firstAttribute="top" secondItem="syx-W3-FU6" secondAttribute="bottom" constant="8" id="b3o-OK-aX2"/>
                             <constraint firstAttribute="trailing" secondItem="zEX-LZ-Vpu" secondAttribute="trailing" id="hcG-vE-q8J"/>
                             <constraint firstAttribute="trailing" secondItem="syx-W3-FU6" secondAttribute="trailing" id="jmL-JK-hb6"/>
+                            <constraint firstItem="jWk-I1-OFO" firstAttribute="top" secondItem="syx-W3-FU6" secondAttribute="bottom" constant="8" id="sUy-YB-GO2"/>
+                            <constraint firstItem="jWk-I1-OFO" firstAttribute="leading" secondItem="Vo8-mB-GeL" secondAttribute="leading" id="v07-1l-u2t"/>
                             <constraint firstItem="syx-W3-FU6" firstAttribute="top" secondItem="zEX-LZ-Vpu" secondAttribute="bottom" constant="8" id="vD5-li-clk"/>
                         </constraints>
                     </view>
@@ -152,6 +163,7 @@
                         <outlet property="makeLabel2" destination="zEX-LZ-Vpu" id="I8Y-fK-PuF"/>
                         <outlet property="modelLabel2" destination="syx-W3-FU6" id="6hd-y3-hSX"/>
                         <outlet property="modelYearLabel2" destination="pFB-fn-RNW" id="IvF-qw-9Jh"/>
+                        <outlet property="mpgLabel" destination="jWk-I1-OFO" id="4rM-L1-93E"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="b4B-ww-tKO" userLabel="First Responder" sceneMemberID="firstResponder"/>
