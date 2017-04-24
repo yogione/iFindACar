@@ -131,42 +131,64 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jWk-I1-OFO" userLabel="mpg label">
-                                <rect key="frame" x="0.0" y="114" width="359" height="17"/>
+                                <rect key="frame" x="0.0" y="114" width="375" height="17"/>
+                                <color key="backgroundColor" red="0.0" green="0.0" blue="1" alpha="0.11632867907801418" colorSpace="calibratedRGB"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HBr-2e-3aN" userLabel="tranny Label">
-                                <rect key="frame" x="0.0" y="139" width="359" height="17"/>
+                                <rect key="frame" x="0.0" y="139" width="375" height="17"/>
+                                <color key="backgroundColor" red="0.0" green="0.0" blue="1" alpha="0.19251440602836881" colorSpace="calibratedRGB"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kFn-aO-nb2" userLabel="vehicleClassLabel">
                                 <rect key="frame" x="0.0" y="164" width="375" height="17"/>
+                                <color key="backgroundColor" red="0.0" green="0.0" blue="1" alpha="0.21412344858156029" colorSpace="calibratedRGB"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jTV-ix-KVi">
+                                <rect key="frame" x="0.0" y="189" width="375" height="17"/>
+                                <color key="backgroundColor" red="0.0" green="1" blue="0.0" alpha="0.17533798758865249" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="r47-qS-Tlh" userLabel="Car Image View">
+                                <rect key="frame" x="0.0" y="232" width="375" height="182"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="182" id="hY1-Vq-cxN"/>
+                                </constraints>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="zEX-LZ-Vpu" firstAttribute="top" secondItem="9De-4d-JIb" secondAttribute="bottom" id="1Nl-je-g4G"/>
-                            <constraint firstAttribute="trailing" secondItem="jWk-I1-OFO" secondAttribute="trailing" constant="16" id="1eI-Yj-2q5"/>
+                            <constraint firstAttribute="trailing" secondItem="r47-qS-Tlh" secondAttribute="trailing" id="6Vr-ed-Jtb"/>
                             <constraint firstItem="pFB-fn-RNW" firstAttribute="top" secondItem="9De-4d-JIb" secondAttribute="bottom" id="ESE-QJ-MXp"/>
                             <constraint firstItem="kFn-aO-nb2" firstAttribute="top" secondItem="HBr-2e-3aN" secondAttribute="bottom" constant="8" id="HF7-Dm-OMX"/>
                             <constraint firstItem="jWk-I1-OFO" firstAttribute="leading" secondItem="Vo8-mB-GeL" secondAttribute="leading" id="NNF-qP-yph"/>
+                            <constraint firstAttribute="trailing" secondItem="jWk-I1-OFO" secondAttribute="trailing" id="Nf2-9o-brU"/>
                             <constraint firstItem="syx-W3-FU6" firstAttribute="leading" secondItem="Vo8-mB-GeL" secondAttribute="leading" id="PBI-dd-02W"/>
                             <constraint firstItem="kFn-aO-nb2" firstAttribute="leading" secondItem="Vo8-mB-GeL" secondAttribute="leading" id="Qpq-ob-X6d"/>
                             <constraint firstItem="pFB-fn-RNW" firstAttribute="leading" secondItem="Vo8-mB-GeL" secondAttribute="leading" id="UVf-WB-eIt"/>
+                            <constraint firstItem="r47-qS-Tlh" firstAttribute="top" secondItem="jTV-ix-KVi" secondAttribute="bottom" constant="26" id="Zfg-xv-PSW"/>
                             <constraint firstItem="jWk-I1-OFO" firstAttribute="top" secondItem="syx-W3-FU6" secondAttribute="bottom" constant="8" id="b3o-OK-aX2"/>
-                            <constraint firstAttribute="trailing" secondItem="HBr-2e-3aN" secondAttribute="trailing" constant="16" id="cE1-Vh-hGm"/>
+                            <constraint firstAttribute="trailing" secondItem="jTV-ix-KVi" secondAttribute="trailing" id="fIn-Yp-ato"/>
                             <constraint firstAttribute="trailing" secondItem="zEX-LZ-Vpu" secondAttribute="trailing" id="hcG-vE-q8J"/>
+                            <constraint firstItem="jTV-ix-KVi" firstAttribute="leading" secondItem="Vo8-mB-GeL" secondAttribute="leading" id="iW0-mb-8Nz"/>
                             <constraint firstItem="HBr-2e-3aN" firstAttribute="leading" secondItem="Vo8-mB-GeL" secondAttribute="leading" id="iZy-j3-JQ6"/>
                             <constraint firstAttribute="trailing" secondItem="syx-W3-FU6" secondAttribute="trailing" id="jmL-JK-hb6"/>
+                            <constraint firstItem="jTV-ix-KVi" firstAttribute="top" secondItem="kFn-aO-nb2" secondAttribute="bottom" constant="8" id="pLH-mV-Rh2"/>
                             <constraint firstItem="jWk-I1-OFO" firstAttribute="top" secondItem="syx-W3-FU6" secondAttribute="bottom" constant="8" id="sUy-YB-GO2"/>
                             <constraint firstItem="jWk-I1-OFO" firstAttribute="leading" secondItem="Vo8-mB-GeL" secondAttribute="leading" id="v07-1l-u2t"/>
                             <constraint firstItem="syx-W3-FU6" firstAttribute="top" secondItem="zEX-LZ-Vpu" secondAttribute="bottom" constant="8" id="vD5-li-clk"/>
+                            <constraint firstAttribute="trailing" secondItem="HBr-2e-3aN" secondAttribute="trailing" id="vkh-Pi-fJF"/>
+                            <constraint firstItem="r47-qS-Tlh" firstAttribute="leading" secondItem="Vo8-mB-GeL" secondAttribute="leading" id="wIi-tZ-1Yb"/>
                             <constraint firstAttribute="trailing" secondItem="kFn-aO-nb2" secondAttribute="trailing" id="x5M-jH-0jc"/>
                             <constraint firstItem="HBr-2e-3aN" firstAttribute="top" secondItem="jWk-I1-OFO" secondAttribute="bottom" constant="8" id="zCn-JZ-Cxn"/>
                         </constraints>
@@ -176,6 +198,7 @@
                         <outlet property="modelLabel2" destination="syx-W3-FU6" id="6hd-y3-hSX"/>
                         <outlet property="modelYearLabel2" destination="pFB-fn-RNW" id="IvF-qw-9Jh"/>
                         <outlet property="mpgLabel" destination="jWk-I1-OFO" id="4rM-L1-93E"/>
+                        <outlet property="safetyRatingLabel" destination="jTV-ix-KVi" id="iQU-w0-cOV"/>
                         <outlet property="trannyLabel" destination="HBr-2e-3aN" id="KTL-M5-Zwf"/>
                         <outlet property="vehicleClassLabel" destination="kFn-aO-nb2" id="d7T-aI-aFM"/>
                     </connections>
