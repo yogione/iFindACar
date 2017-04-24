@@ -38,7 +38,7 @@ class DetailViewController: UIViewController, UINavigationControllerDelegate  {
             let xmlResult = SWXMLHash.parse(response.data!)
             for elem in xmlResult["menuItems"]["menuItem"].all {
                 //  print(elem["text"].element!.text!)
-                guard let currVehicleId = elem["value"].element!.text!  as? String
+                guard let currVehicleId = elem["value"].element!.text  // ! as? String
                     else {  continue }
                 self.vehicleIDArray.append(currVehicleId)
                 self.hostName4detailsByVehicleId = "http://www.fueleconomy.gov/ws/rest/vehicle/" + self.vehicleIDArray.first!
@@ -47,27 +47,30 @@ class DetailViewController: UIViewController, UINavigationControllerDelegate  {
            // sleep(1)
           //  self.alamoFire3ToGetMPG()
               DispatchQueue.main.async {
+                if self.vehicleIDArray.count > 0 {
                   self.alamoFire3ToGetMPG()
+                }
                }
         }
     }
     
     
     func alamoFire3ToGetMPG(){
-        print("in func alamoFire3ToGetMPG")
+        print("from alamoFire3ToGetMPG: \(vehicleIDArray.count)")
+
         self.hostName4detailsByVehicleId = "http://www.fueleconomy.gov/ws/rest/vehicle/" + self.vehicleIDArray.first!
         Alamofire.request(self.hostName4detailsByVehicleId!, method: .get, parameters: nil).response { ( response) in
             // print(response.data!) // if you want to check XML data in debug window.
             let xmlResultFinal = SWXMLHash.parse(response.data!)
             for elem in xmlResultFinal["vehicle"].all {
                 //  print(elem["text"].element!.text!)
-                guard let cityMPG = elem["city08"].element!.text!  as? String
+                guard let cityMPG = elem["city08"].element!.text //!  as? String
                     else { print("nothing in currPowerTRain"); continue }
-                guard let highwayMPG = elem["highway08"].element!.text!  as? String
+                guard let highwayMPG = elem["highway08"].element!.text  //!  as? String
                     else { continue }
-                guard let currPowerTrain = elem["trany"].element!.text!  as? String
+                guard let currPowerTrain = elem["trany"].element!.text  //!  as? String
                     else { continue }
-                guard let currVehicleClass = elem["VClass"].element!.text!  as? String
+                guard let currVehicleClass = elem["VClass"].element!.text //!  as? String
                     else { continue }
 
                 print("cityMPG: \(cityMPG)")
@@ -100,19 +103,15 @@ class DetailViewController: UIViewController, UINavigationControllerDelegate  {
 
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(true)
-        if vehicleIDArray.count <= 0 {
+        if vehicleIDArray.count == 0 {
             print("in view did appear - IF")
             alamoFire2GetVID(currCar: currentVehicle!)
-            sleep(1)
-            alamoFire3ToGetMPG()
-
-           // sleep(1)
         }
-        else {
-            print("in view did appear - ELSE")
-            sleep(1)
-            alamoFire3ToGetMPG()
-        }
+//        else {
+//            print("in view did appear - ELSE")
+//            sleep(1)
+//            alamoFire3ToGetMPG()
+//        }
         print("from viewDidAppear: \(vehicleIDArray.count)")
         
     }
@@ -124,6 +123,7 @@ class DetailViewController: UIViewController, UINavigationControllerDelegate  {
 
 
 /*    tried to get a car picture from edmunds or google CSE - need more time
+ 
  func googleCSEforCarPics(){
  let googURL = "https://www.googleapis.com/customsearch/v1?key=AIzaSyD7ut7MqqZneOYRVFuEOnRrYDiQ8D1G16g&cx=006117311130417845890%3A1rupjxyiqvw&q=honda%20civic%202016&searchType=image&fileType=jpg&imgSize=medium&alt=json"
  Alamofire.request(googURL).responseJSON { (responseData) -> Void in
