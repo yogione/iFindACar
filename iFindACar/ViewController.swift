@@ -31,7 +31,7 @@ class ViewController: UIViewController {
                     let xmlResult = SWXMLHash.parse(response.data!)
                     for elem in xmlResult["menuItems"]["menuItem"].all {
                       //  print(elem["text"].element!.text!)
-                        guard let currModel = elem["text"].element!.text! as? String
+                        guard let currModel = elem["text"].element!.text  // ! as? String
                         else { continue }
                         
                        // print("year: \(year), make: \(make), model: \(currModel)")
