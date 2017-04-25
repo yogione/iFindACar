@@ -132,7 +132,7 @@
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jWk-I1-OFO" userLabel="mpg label">
                                 <rect key="frame" x="0.0" y="114" width="375" height="17"/>
-                                <color key="backgroundColor" red="0.0" green="0.0" blue="1" alpha="0.11632867907801418" colorSpace="calibratedRGB"/>
+                                <color key="backgroundColor" red="0.96338934409999999" green="1" blue="0.76826753020000005" alpha="1" colorSpace="calibratedRGB"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -194,6 +194,7 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="carImageView" destination="r47-qS-Tlh" id="vyv-qT-sNw"/>
                         <outlet property="makeLabel2" destination="zEX-LZ-Vpu" id="I8Y-fK-PuF"/>
                         <outlet property="modelLabel2" destination="syx-W3-FU6" id="6hd-y3-hSX"/>
                         <outlet property="modelYearLabel2" destination="pFB-fn-RNW" id="IvF-qw-9Jh"/>

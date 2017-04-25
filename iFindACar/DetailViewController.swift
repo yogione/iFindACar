@@ -132,33 +132,25 @@ class DetailViewController: UIViewController, UINavigationControllerDelegate  {
                     else { continue }
                 guard let imageurl1 = elem["VehiclePicture"].element!.text
                     else { continue }
-                
-                
                
                 self.safetyRating = overallRating1
                 self.imageurl = imageurl1
                  print("overall rating: \(overallRating1), image url: \(self.imageurl!)")
                 
-                
             }
             self.showCarDetails(currCar: self.currentVehicle!)
             self.safetyRatingLabel.text =  "safety rating stars: " + "\(self.safetyRating!)"
             
-          //  self.carImageView.setImageFromURl(stringImageUrl: "http://www.safercar.gov/staticfiles/DOT/safercar/ncapmedia/images/2017/v09969P084.jpg")
+           // self.carImageView.downloadedFrom(link: "http://www.safercar.gov/staticfiles/DOT/safercar/ncapmedia/images/2017/v09969P084.jpg")
+          //  self.carImageView.downloadedFrom(link: "http://www.apple.com/euro/ios/ios8/a/generic/images/og.png")
             
-           // self.carImageView.imageFromUrl(urlString: self.imageurl)
-           // self.carImageView.downloadedFrom(link: "http://www.apple.com/euro/ios/ios8/a/generic/images/og.png")
-//            let url = URL(string: "http://www.safercar.gov/staticfiles/DOT/safercar/ncapmedia/images/2017/v09969P084.jpg")
-//            
-//            DispatchQueue.global().async {
-//                let data = try? Data(contentsOf: url!) //make sure your image in this url does exist, otherwise unwrap in a if let check / try-catch
-//                DispatchQueue.main.async {
-//                    sleep(2)
-//                    self.carImageView.image = UIImage(data: data!)
-//                }
-//            }
-            
-            
+            print("Begin of code")
+            if let checkedUrl = URL(string: self.imageurl!) {
+                self.carImageView.contentMode = .scaleAspectFit
+                self.downloadImagefromNHTSA(url: checkedUrl)
+            }
+            print("End of code. The image will continue downloading in the background and it will be loaded when it ends.")
+
         }
     }
     
@@ -166,6 +158,25 @@ class DetailViewController: UIViewController, UINavigationControllerDelegate  {
         modelYearLabel2.text = currCar.modelYear
         makeLabel2.text = currCar.make
         modelLabel2.text = currCar.model
+    }
+    
+    func getDataFromUrl(url: URL, completion: @escaping (_ data: Data?, _  response: URLResponse?, _ error: Error?) -> Void) {
+        URLSession.shared.dataTask(with: url) {
+            (data, response, error) in
+            completion(data, response, error)
+            }.resume()
+    }
+    
+    func downloadImagefromNHTSA(url: URL) {
+        print("Download Started")
+        getDataFromUrl(url: url) { (data, response, error)  in
+            guard let data = data, error == nil else { return }
+            print(response?.suggestedFilename ?? url.lastPathComponent)
+            print("Download Finished")
+            DispatchQueue.main.async() { () -> Void in
+                self.carImageView.image = UIImage(data: data)
+            }
+        }
     }
   
     override func viewDidLoad() {
@@ -189,6 +200,8 @@ class DetailViewController: UIViewController, UINavigationControllerDelegate  {
 //            sleep(1)
 //            alamoFire3ToGetMPG()
 //        }
+        if (vehicleIDArrayNHTSA.count == 0)
+        {getNHTSAdataVID(currCar: self.currentVehicle!)}
         print("from viewDidAppear: \(vehicleIDArray.count)")
         
     }
@@ -198,7 +211,7 @@ class DetailViewController: UIViewController, UINavigationControllerDelegate  {
     }
 }
 
-extension UIImageView {
+/*extension UIImageView {
     func downloadedFrom(url: URL, contentMode mode: UIViewContentMode = .scaleAspectFit) {
         contentMode = mode
         URLSession.shared.dataTask(with: url) { (data, response, error) in
@@ -217,29 +230,5 @@ extension UIImageView {
         guard let url = URL(string: link) else { return }
         downloadedFrom(url: url, contentMode: mode)
     }
-}
+} */
 
-
-/*    tried to get a car picture from edmunds or google CSE - need more time
- 
- func googleCSEforCarPics(){
- let googURL = "https://www.googleapis.com/customsearch/v1?key=AIzaSyD7ut7MqqZneOYRVFuEOnRrYDiQ8D1G16g&cx=006117311130417845890%3A1rupjxyiqvw&q=honda%20civic%202016&searchType=image&fileType=jpg&imgSize=medium&alt=json"
- Alamofire.request(googURL).responseJSON { (responseData) -> Void in
- if((responseData.result.value) != nil) {
- let swiftyJsonVar = JSON(responseData.result.value!)
- print("from google cse: \(swiftyJsonVar)")
- }
- }
- }
- 
- func parseEdmundsJSON4imageURL(){
- print("in edmunds api")
- Alamofire.request("https://api.edmunds.com/api/media/v2/honda/civic/2013/photos?api_key=zn4xt3awf9vx9dwnfbqvxn8f").responseJSON { (responseData) -> Void in
- if((responseData.result.value) != nil) {
- let swiftyJsonVar = JSON(responseData.result.value!)
- print("from edumund: \(swiftyJsonVar)")
- }
- }
- }
- 
- */
