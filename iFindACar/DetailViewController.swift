@@ -134,9 +134,10 @@ class DetailViewController: UIViewController, UINavigationControllerDelegate  {
                     else { continue }
                 
                 
-                print("overall rating: \(overallRating1), \(imageurl1)")
+               
                 self.safetyRating = overallRating1
                 self.imageurl = imageurl1
+                 print("overall rating: \(overallRating1), image url: \(self.imageurl!)")
                 
                 
             }
@@ -145,15 +146,16 @@ class DetailViewController: UIViewController, UINavigationControllerDelegate  {
             
           //  self.carImageView.setImageFromURl(stringImageUrl: "http://www.safercar.gov/staticfiles/DOT/safercar/ncapmedia/images/2017/v09969P084.jpg")
             
-//            let url = NSURL(string:self.imageurl)
-//            let data = NSData(contentsOf:url! as URL)
+           // self.carImageView.imageFromUrl(urlString: self.imageurl)
+           // self.carImageView.downloadedFrom(link: "http://www.apple.com/euro/ios/ios8/a/generic/images/og.png")
+//            let url = URL(string: "http://www.safercar.gov/staticfiles/DOT/safercar/ncapmedia/images/2017/v09969P084.jpg")
 //            
-//            // It is the best way to manage nil issue.
-//            if (data?.length)! > 0 {
-//                self.carImageView.image = UIImage(data:data! as Data)
-//            } else {
-//                // In this when data is nil or empty then we can assign a placeholder image
-//                self.carImageView.image = UIImage(named: "http://www.safercar.gov/staticfiles/DOT/safercar/ncapmedia/images/2017/v09969P084.jpg")
+//            DispatchQueue.global().async {
+//                let data = try? Data(contentsOf: url!) //make sure your image in this url does exist, otherwise unwrap in a if let check / try-catch
+//                DispatchQueue.main.async {
+//                    sleep(2)
+//                    self.carImageView.image = UIImage(data: data!)
+//                }
 //            }
             
             
@@ -169,9 +171,9 @@ class DetailViewController: UIViewController, UINavigationControllerDelegate  {
     override func viewDidLoad() {
         super.viewDidLoad()
         alamoFire2GetVID(currCar: currentVehicle!)
-        DispatchQueue.main.async {
-            self.getNHTSAdataVID(currCar: self.currentVehicle!)
-        }
+       // DispatchQueue.main.async {
+        getNHTSAdataVID(currCar: self.currentVehicle!)
+       // }
         showCarDetails(currCar: currentVehicle!)
         
     }
@@ -196,15 +198,24 @@ class DetailViewController: UIViewController, UINavigationControllerDelegate  {
     }
 }
 
-extension UIImageView{
-    
-    func setImageFromURl(stringImageUrl url: String){
-        
-        if let url = NSURL(string: url) {
-            if let data = NSData(contentsOf: url as URL) {
-                self.image = UIImage(data: data as Data)
+extension UIImageView {
+    func downloadedFrom(url: URL, contentMode mode: UIViewContentMode = .scaleAspectFit) {
+        contentMode = mode
+        URLSession.shared.dataTask(with: url) { (data, response, error) in
+            guard
+                let httpURLResponse = response as? HTTPURLResponse, httpURLResponse.statusCode == 200,
+                let mimeType = response?.mimeType, mimeType.hasPrefix("image"),
+                let data = data, error == nil,
+                let image = UIImage(data: data)
+                else { return }
+            DispatchQueue.main.async() { () -> Void in
+                self.image = image
             }
-        }
+            }.resume()
+    }
+    func downloadedFrom(link: String, contentMode mode: UIViewContentMode = .scaleAspectFit) {
+        guard let url = URL(string: link) else { return }
+        downloadedFrom(url: url, contentMode: mode)
     }
 }
 
