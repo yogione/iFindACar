@@ -195,7 +195,7 @@ class DetailViewController: UIViewController, UINavigationControllerDelegate  {
             print("in view did appear - IF")
             alamoFire2GetVID(currCar: currentVehicle!)
         }
-//        else {
+//        else { 
 //            print("in view did appear - ELSE")
 //            sleep(1)
 //            alamoFire3ToGetMPG()

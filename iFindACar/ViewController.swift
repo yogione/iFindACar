@@ -40,6 +40,9 @@ class ViewController: UIViewController {
                     }
                   //  self.vehicleArray.sorted(by: { $0.make > $1.make })
                     DispatchQueue.main.async {
+                        self.vehicleArray.sort(by: { (this: Vehicle, that: Vehicle) -> Bool in
+                            this.make > that.make
+                        })
                         self.vehicleTableView.reloadData()
                     }
                 } // makeArray loop
